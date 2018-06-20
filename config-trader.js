@@ -34,7 +34,7 @@ config.tradingAdvisor = {
   enabled: true,
   method: 'RSI_BULL_BEAR',
   candleSize: 1,
-  historySize: 250,
+  historySize: 10,
 }
 
 // gsxr RSI_BULL_BEAR_ADX manual config
