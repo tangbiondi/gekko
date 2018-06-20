@@ -37,6 +37,15 @@ config.tradingAdvisor = {
   historySize: 10,
 }
 
+// plugin for google sheet integration
+config.gforms = {
+  enabled: true,
+  botTag: 'trades', //Add a custom tag here. This will be included in the name of the spreadsheet tab for this bot.
+  // Get a prefilled link of your google for, each question answered with a single space and paste here.
+  // It should resemble: https://docs.google.com/forms/d/e/1FAIp-My-Form-ID-K6PaOg3bPLg/viewform?usp=pp_url&entry.852051357=+&entry.1346916648=+&entry.1743858251=+&entry.105864059=+&entry.68010386=+&entry.3616735=+&entry.1463011579=+&entry.433943481=+&entry.620326103=+&entry.1202282384=+&entry.1415514787=+
+  prefill: 'https://docs.google.com/forms/d/e/1FAIpQLScEj29hT6FIwWFz2ih3j2pz9IU39ogK0OMyuPFHzB1Al6qVHw/viewform?usp=pp_url&entry.850517406=1&entry.279766585=+&entry.1264537263=+&entry.572526128=+&entry.1866353395=+&entry.1796888820=+&entry.2009579850=+&entry.2114640293=+&entry.1986624944=+&entry.1709320084=+&entry.1981273450=+',
+};
+
 // gsxr RSI_BULL_BEAR_ADX manual config
 config.RSI_BULL_BEAR_ADX = {
 	SMA : {

@@ -42,6 +42,17 @@ var plugins = [
     path: config => 'tradingAdvisor/tradingAdvisor.js',
   },
   {
+    name: 'Google Forms',
+    description: 'Logs Trades to Google Forms',
+    slug: 'gforms',
+    async: false,
+    modes: ['realtime'],
+    dependencies: [{
+      module: 'request',
+      version: '2.85.0'
+    }]
+  },
+  {
     name: 'IRC bot',
     description: 'IRC module lets you communicate with Gekko on IRC.',
     slug: 'ircbot',
