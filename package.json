@@ -44,6 +44,7 @@
     "lakebtc_nodejs": "0.1.x",
     "lodash": "2.x",
     "moment": "^2.20.1",
+    "node-telegram-bot-api": "^0.30.0",
     "node-wex": "^1.0.3",
     "node.bittrex.api": "^0.4.3",
     "okcoin-china": "0.0.7",
@@ -58,8 +59,10 @@
     "semver": "5.4.1",
     "sqlite3": "^3.1.13",
     "stats-lite": "^2.0.4",
+    "talib": "^1.0.5",
     "tiny-promisify": "^0.1.1",
     "toml": "^2.3.0",
+    "tulind": "^0.8.10",
     "twitter": "^1.7.1",
     "zaif.jp": "^0.1.4"
   },
@@ -72,11 +75,11 @@
     "sinon": "^4.2.0"
   },
   "engines": {
-    "node": ">=6.0"
+    "node": "8.10.0"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/askmike/gekko.git"
+    "url": "https://github.com/tangbiondi/gekko.git"
   }
 }
