@@ -94,6 +94,8 @@ var strat = {
 			
 			if(this.debug) this.lowHigh( rsi, 'bear' );
 			//log.debug('BEAR-trend');
+			// gsxr debug
+			console.log('maFast= ' + maFast + ' maSlow=' + maSlow + ' rsi=' + rsi + ' rsiBearHigh=' + this.settings.BEAR_RSI_high + ' rsiBearLow=' + this.settings.BEAR_RSI_low);
 		}
 
 		// BULL TREND
@@ -103,6 +105,7 @@ var strat = {
 			if( rsi > this.settings.BULL_RSI_high ) this.short();
 			else if( rsi < this.settings.BULL_RSI_low )  this.long();
 			if(this.debug) this.lowHigh( rsi, 'bull' );
+			console.log('maFast= ' + maFast + ' maSlow=' + maSlow + ' rsi=' + rsi + ' rsiBullHigh=' + this.settings.BULL_RSI_high + ' rsiBullLow=' + this.settings.BULL_RSI_low);
 			//log.debug('BULL-trend');
 		}
 	
