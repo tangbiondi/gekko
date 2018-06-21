@@ -32,9 +32,9 @@ config.watch = {
 
 config.tradingAdvisor = {
   enabled: true,
-  method: 'RSI_BULL_BEAR',
-  candleSize: 1,
-  historySize: 10,
+  method: 'RSI_BULL_BEAR_ADX',
+  candleSize: 10,
+  historySize: 250,
 }
 
 // plugin for google sheet integration
