@@ -405,7 +405,7 @@ config.postgresql = {
   path: 'plugins/postgresql',
   version: 0.1,
   connectionString: 'postgres://soqsdloojpmgqg:12c9837fed213a64e07103c515a2a57d6bfce59de2e538e9e9a0ffce8e537dea@ec2-107-21-255-2.compute-1.amazonaws.com:5432/d91bbjvd9k9lg3', // if default port
-  database: null, // if set, we'll put all tables into a single database.
+  database: 'd91bbjvd9k9lg3', // if set, we'll put all tables into a single database.
   schema: 'public',
   dependencies: [{
     module: 'pg',
