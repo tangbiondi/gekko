@@ -439,7 +439,7 @@ config.adviceWriter = {
 //                       CONFIGURING ADAPTER
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-config.adapter = 'sqlite';
+config.adapter = 'postgresql';
 
 config.sqlite = {
   path: 'plugins/sqlite',
