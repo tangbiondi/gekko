@@ -35,6 +35,7 @@ var mode = util.gekkoMode();
 var connectionString = config.postgresql.connectionString;
 console.log('connectionString: ' + connectionString);
 console.log('dbname: ' + dbName);
+console.log('process env var: ' + process.env.DATABASE_URL);
 var checkClient = new pg.Client(connectionString);
 // var client = new pg.Client(config.postgresql.connectionString+"/"+dbName);
 var client = new pg.Client(config.postgresql.connectionString);
