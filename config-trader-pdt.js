@@ -50,7 +50,7 @@ config.gforms = {
 config.RSI_BULL_BEAR_ADX = {
 	SMA : {
 		long : 375,
-		short : 9.75
+		short : 10
 	},
 	BULL : {
 		rsi : 15,
