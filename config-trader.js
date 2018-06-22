@@ -353,7 +353,8 @@ config.ircbot = {
 config.telegrambot = {
   enabled: true,
   emitUpdates: true,
-  token: '436225961:AAHGpeBjLorDRdWmGGYeN40TFZDjUiKiVOA',
+//  token: '436225961:AAHGpeBjLorDRdWmGGYeN40TFZDjUiKiVOA',
+	token: process.env.TELEGRAM_TOKEN,
   botName: 'gekkobot'
 };
 
@@ -456,7 +457,6 @@ config.sqlite = {
 config.postgresql = {
   path: 'plugins/postgresql',
   version: 0.1,
-//  connectionString: 'postgres://soqsdloojpmgqg:12c9837fed213a64e07103c515a2a57d6bfce59de2e538e9e9a0ffce8e537dea@ec2-107-21-255-2.compute-1.amazonaws.com:5432/d91bbjvd9k9lg3', // if default port
   connectionString: process.env.DATABASE_URL,
   database: null, // if set, we'll put all tables into a single database.
   schema: 'public',
