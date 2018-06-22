@@ -34,7 +34,7 @@ config.tradingAdvisor = {
   enabled: true,
   method: 'RSI_BULL_BEAR_ADX',
   candleSize: 5, // check function is called per candle
-  historySize: 1000,
+  historySize: 375,
 }
 
 // plugin for google sheet integration
@@ -49,27 +49,27 @@ config.gforms = {
 // gsxr RSI_BULL_BEAR_ADX manual config
 config.RSI_BULL_BEAR_ADX = {
 	SMA : {
-		long : 1000,
-		short : 50
+		long : 375,
+		short : 9.75
 	},
 	BULL : {
-		rsi : 10,
-		high : 80,
-		low : 60,
-		mod_high : 5,
-		mod_low : -5
+		rsi : 15,
+		high : 75,
+		low : 48.25,
+		mod_high : 7,
+		mod_low : -6.75
 	},
 	BEAR : {
-		rsi : 15,
-		high : 50,
-		low : 20,
-		mod_high : 15,
-		mod_low  : -5
+		rsi : 22,
+		high : 53.75,
+		low : 29.5,
+		mod_high : 12.5,
+		mod_low  : -11.5
 	},
 	ADX : {
-		adx : 3,
-		high : 70,
-		low : 50
+		adx : 8.5,
+		high : 74.75,
+		low : 29.75
 	}
 	
 }

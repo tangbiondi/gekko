@@ -8,7 +8,7 @@ var config = {};
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 config.debug = true; // for additional logging / debugging
-
+config.silent = false; // no need to wait for initial data loading
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                         WATCHING A MARKET
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -23,7 +23,7 @@ config.watch = {
   // You can set your own tickrate (refresh rate).
   // If you don't set it, the defaults are 2 sec for
   // okcoin and 20 sec for all other exchanges.
-  // tickrate: 20
+  tickrate: 60
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -32,9 +32,59 @@ config.watch = {
 
 config.tradingAdvisor = {
   enabled: true,
-  method: 'MACD',
-  candleSize: 60,
-  historySize: 10,
+  method: 'RSI_BULL_BEAR_ADX',
+  candleSize: 5, // check function is called per candle
+  historySize: 375,
+}
+
+// plugin for google sheet integration
+config.gforms = {
+  enabled: true,
+  botTag: 1, //Add a custom tag here. This will be included in the name of the spreadsheet tab for this bot.
+  // Get a prefilled link of your google for, each question answered with a single space and paste here.
+  // It should resemble: https://docs.google.com/forms/d/e/1FAIp-My-Form-ID-K6PaOg3bPLg/viewform?usp=pp_url&entry.852051357=+&entry.1346916648=+&entry.1743858251=+&entry.105864059=+&entry.68010386=+&entry.3616735=+&entry.1463011579=+&entry.433943481=+&entry.620326103=+&entry.1202282384=+&entry.1415514787=+
+  prefill: 'https://docs.google.com/forms/d/e/1FAIpQLScEj29hT6FIwWFz2ih3j2pz9IU39ogK0OMyuPFHzB1Al6qVHw/viewform?usp=pp_url&entry.850517406=1&entry.279766585=+&entry.1264537263=+&entry.572526128=+&entry.1866353395=+&entry.1796888820=+&entry.2009579850=+&entry.2114640293=+&entry.1986624944=+&entry.1709320084=+&entry.1981273450=+',
+};
+
+// gsxr RSI_BULL_BEAR_ADX manual config
+config.RSI_BULL_BEAR_ADX = {
+	SMA : {
+		long : 375,
+		short : 9.75
+	},
+	BULL : {
+		rsi : 15,
+		high : 75,
+		low : 48.25,
+		mod_high : 7,
+		mod_low : -6.75
+	},
+	BEAR : {
+		rsi : 22,
+		high : 53.75,
+		low : 29.5,
+		mod_high : 12.5,
+		mod_low  : -11.5
+	},
+	ADX : {
+		adx : 8.5,
+		high : 74.75,
+		low : 29.75
+	}
+	
+}
+
+config.RSI_BULL_BEAR = {
+	SMA_long : 1000,
+	SMA_short : 50,
+
+	BULL_RSI : 10,
+	BULL_RSI_high : 80,
+	BULL_RSI_low : 60,
+
+	BEAR_RSI : 15,
+	BEAR_RSI_high : 50,
+	BEAR_RSI_low : 20
 }
 
 // Exponential Moving Averages settings:
@@ -184,18 +234,18 @@ config['talib-macd'] = {
 
 // do you want Gekko to simulate the profit of the strategy's own advice?
 config.paperTrader = {
-  enabled: true,
+  enabled: false,
   // report the profit in the currency or the asset?
   reportInCurrency: true,
   // start balance, on what the current balance is compared with
   simulationBalance: {
     // these are in the unit types configured in the watcher.
-    asset: 1,
-    currency: 100,
+    asset: 0,
+    currency: 1000,
   },
   // how much fee in % does each trade cost?
-  feeMaker: 0.15,
-  feeTaker: 0.25,
+  feeMaker: 0.05,
+  feeTaker: 0.05,
   feeUsing: 'maker',
   // how much slippage/spread should Gekko assume per trade?
   slippage: 0.05,
@@ -210,16 +260,16 @@ config.performanceAnalyzer = {
 // Enabling this will activate trades for the market being
 // watched by `config.watch`.
 config.trader = {
-  enabled: false,
-  key: '',
-  secret: '',
+  enabled: true,
+  key: process.env.KEY,
+  secret: process.env.SCT,
   username: '', // your username, only required for specific exchanges.
   passphrase: '', // GDAX, requires a passphrase.
   orderUpdateDelay: 1, // Number of minutes to adjust unfilled order prices
 }
 
 config.adviceLogger = {
-  enabled: false,
+  enabled: true,
   muteSoft: true // disable advice printout if it's soft
 }
 
@@ -301,8 +351,11 @@ config.ircbot = {
 }
 
 config.telegrambot = {
-  enabled: false,
-  token: 'YOUR_TELEGRAM_BOT_TOKEN',
+  enabled: true,
+  emitUpdates: true,
+//  token: '436225961:AAHGpeBjLorDRdWmGGYeN40TFZDjUiKiVOA',
+	token: process.env.TELEGRAM_TOKEN,
+  botName: 'gekkobot'
 };
 
 config.twitter = {
@@ -404,7 +457,7 @@ config.sqlite = {
 config.postgresql = {
   path: 'plugins/postgresql',
   version: 0.1,
-  connectionString: 'postgres://soqsdloojpmgqg:12c9837fed213a64e07103c515a2a57d6bfce59de2e538e9e9a0ffce8e537dea@ec2-107-21-255-2.compute-1.amazonaws.com:5432/d91bbjvd9k9lg3', // if default port
+  connectionString: process.env.DATABASE_URL,
   database: null, // if set, we'll put all tables into a single database.
   schema: 'public',
   dependencies: [{
@@ -447,8 +500,8 @@ config.backtest = {
 config.importer = {
   daterange: {
     // NOTE: these dates are in UTC
-    from: "2018-06-21 00:00:00",
-    to: "2018-06-22 08:53:00"
+    from: "2017-11-01 00:00:00",
+    to: "2017-11-20 00:00:00"
   }
 }
 
