@@ -516,6 +516,6 @@ config.importer = {
 // understand this.
 //
 // Not sure? Read this first: https://github.com/askmike/gekko/issues/201
-config['I understand that Gekko only automates MY OWN trading strategies'] = false;
+config['I understand that Gekko only automates MY OWN trading strategies'] = true;
 
 module.exports = config;
