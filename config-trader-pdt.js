@@ -55,7 +55,7 @@ config.RSI_BULL_BEAR_ADX = {
 	BULL : {
 		rsi : 15,
 		high : 70,
-		low : 48,
+		low : 35,
 		mod_high : 7,
 		mod_low : -7
 	},
