@@ -1,1 +1,1 @@
-worker: node gekko --config config-trader-pdt.js
+worker: node gekko --config config-import-simple.js --import

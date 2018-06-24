@@ -184,7 +184,7 @@ config['talib-macd'] = {
 
 // do you want Gekko to simulate the profit of the strategy's own advice?
 config.paperTrader = {
-  enabled: true,
+  enabled: false,
   // report the profit in the currency or the asset?
   reportInCurrency: true,
   // start balance, on what the current balance is compared with
@@ -447,8 +447,8 @@ config.backtest = {
 config.importer = {
   daterange: {
     // NOTE: these dates are in UTC
-    from: "2018-06-21 00:00:00",
-    to: "2018-06-22 08:53:00"
+    from: "2018-06-23 00:00:00",
+    to: "2018-06-24 07:45:00"
   }
 }
 

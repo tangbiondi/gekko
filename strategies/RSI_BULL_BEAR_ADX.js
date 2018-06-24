@@ -143,7 +143,7 @@ var strat = {
 			else if( rsi < rsi_low ) this.long();
 			
 			if(this.debug) this.lowHigh( rsi, 'bear' );
-			console.log('maFast=' + maFast.toFixed(8) + ' maSlow=' + maSlow.toFixed(8) + ' rsi=' + rsi.toFixed(4) + ' rsiBearHigh=' + rsi_hi.toFixed(4) + ' rsiBearLow=' + rsi_low.toFixed(4));
+			console.log('maFast=' + maFast.toFixed(8) + ' maSlow=' + maSlow.toFixed(8) + ' adx=' + adx + ' rsi=' + rsi.toFixed(4) + ' rsiBearHigh=' + rsi_hi.toFixed(4) + ' rsiBearLow=' + rsi_low.toFixed(4));
 		}
 
 		// BULL TREND
@@ -160,7 +160,7 @@ var strat = {
 			if( rsi > rsi_hi ) this.short();
 			else if( rsi < rsi_low )  this.long();
 			if(this.debug) this.lowHigh( rsi, 'bull' );
-			console.log('maFast=' + maFast.toFixed(8) + ' maSlow=' + maSlow.toFixed(8) + ' rsi=' + rsi.toFixed(4) + ' rsiBullHigh=' + rsi_hi.toFixed(4) + ' rsiBullLow=' + rsi_low.toFixed(4));
+			console.log('maFast=' + maFast.toFixed(8) + ' maSlow=' + maSlow.toFixed(8) + ' adx=' + adx + ' rsi=' + rsi.toFixed(4) + ' rsiBullHigh=' + rsi_hi.toFixed(4) + ' rsiBullLow=' + rsi_low.toFixed(4));
 		}
 		
 		// add adx low/high if debug

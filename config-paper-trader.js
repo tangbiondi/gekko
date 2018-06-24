@@ -234,7 +234,7 @@ config['talib-macd'] = {
 
 // do you want Gekko to simulate the profit of the strategy's own advice?
 config.paperTrader = {
-  enabled: false,
+  enabled: true,
   // report the profit in the currency or the asset?
   reportInCurrency: true,
   // start balance, on what the current balance is compared with
@@ -260,9 +260,9 @@ config.performanceAnalyzer = {
 // Enabling this will activate trades for the market being
 // watched by `config.watch`.
 config.trader = {
-  enabled: true,
-  key: process.env.KEY,
-  secret: process.env.SCT,
+  enabled: false,
+//  key: process.env.KEY,
+//  secret: process.env.SCT,
   username: '', // your username, only required for specific exchanges.
   passphrase: '', // GDAX, requires a passphrase.
   orderUpdateDelay: 1, // Number of minutes to adjust unfilled order prices
