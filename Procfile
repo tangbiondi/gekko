@@ -1,1 +1,1 @@
-worker: node gekko --config config-import.js --import
+worker: node gekko --config config-paper-trader.js
