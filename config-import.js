@@ -387,7 +387,7 @@ config.adviceWriter = {
 //                       CONFIGURING ADAPTER
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-config.adapter = 'sqlite';
+config.adapter = 'postgresql';
 
 config.sqlite = {
   path: 'plugins/sqlite',
@@ -448,7 +448,7 @@ config.importer = {
   daterange: {
     // NOTE: these dates are in UTC
     from: "2018-06-28 00:00:00",
-    to: "2018-07-01 06:40:00"
+    to: "2018-07-01 07:22:00"
   }
 }
 
