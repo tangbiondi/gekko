@@ -18,7 +18,7 @@ config.watch = {
   // see https://gekko.wizb.it/docs/introduction/supported_exchanges.html
   exchange: 'binance',
   currency: 'BTC',
-  asset: 'BNB',
+  asset: 'ETC',
 
   // You can set your own tickrate (refresh rate).
   // If you don't set it, the defaults are 2 sec for
@@ -34,7 +34,7 @@ config.tradingAdvisor = {
   enabled: true,
   method: 'RSI_BULL_BEAR_ADX',
   candleSize: 5, // check function is called per candle
-  historySize: 245,
+  historySize: 666,
 }
 
 // plugin for google sheet integration
@@ -49,27 +49,27 @@ config.gforms = {
 // gsxr RSI_BULL_BEAR_ADX manual config
 config.RSI_BULL_BEAR_ADX = {
 	SMA : {
-		long : 245,
-		short : 16
+		long : 690,
+		short : 24
 	},
 	BULL : {
-		rsi : 22,
-		high : 76,
-		low : 48,
-		mod_high : 7,
-		mod_low : -8
+		rsi : 27,
+		high : 70,
+		low : 27,
+		mod_high : 6,
+		mod_low : -4
 	},
 	BEAR : {
-		rsi : 21,
-		high : 53,
-		low : 35,
-		mod_high : 17,
-		mod_low  : -8
+		rsi : 15,
+		high : 80,
+		low : 30,
+		mod_high : 5,
+		mod_low  : -10
 	},
 	ADX : {
-		adx : 19,
-		high : 75,
-		low : 23
+		adx : 30,
+		high : 70,
+		low : 40
 	}
 	
 }

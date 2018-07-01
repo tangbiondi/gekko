@@ -28,7 +28,7 @@ var strat = {
 		this.resetTrend();
 		
 		// debug? set to false to disable all logging/messages/stats (improves performance in backtests)
-		this.debug = true;
+		this.debug = false;
 		
 		// performance
 		config.backtest.batchSize = 1000; // increase performance
@@ -143,7 +143,7 @@ var strat = {
 			else if( rsi < rsi_low ) this.long();
 			
 			if(this.debug) this.lowHigh( rsi, 'bear' );
-			console.log('maFast=' + maFast.toFixed(8) + ' maSlow=' + maSlow.toFixed(8) + ' adx=' + adx + ' rsi=' + rsi.toFixed(4) + ' rsiBearHigh=' + rsi_hi.toFixed(4) + ' rsiBearLow=' + rsi_low.toFixed(4));
+			//console.log('maFast=' + maFast.toFixed(8) + ' maSlow=' + maSlow.toFixed(8) + ' adx=' + adx.toFixed(4) + ' rsi=' + rsi.toFixed(4) + ' rsiBearHigh=' + rsi_hi + ' rsiBearLow=' + rsi_low);
 		}
 
 		// BULL TREND
@@ -160,7 +160,7 @@ var strat = {
 			if( rsi > rsi_hi ) this.short();
 			else if( rsi < rsi_low )  this.long();
 			if(this.debug) this.lowHigh( rsi, 'bull' );
-			console.log('maFast=' + maFast.toFixed(8) + ' maSlow=' + maSlow.toFixed(8) + ' adx=' + adx + ' rsi=' + rsi.toFixed(4) + ' rsiBullHigh=' + rsi_hi.toFixed(4) + ' rsiBullLow=' + rsi_low.toFixed(4));
+			//console.log('maFast=' + maFast.toFixed(8) + ' maSlow=' + maSlow.toFixed(8) + ' adx=' + adx.toFixed(4) + ' rsi=' + rsi.toFixed(4) + ' rsiBullHigh=' + rsi_hi + ' rsiBullLow=' + rsi_low);
 		}
 		
 		// add adx low/high if debug

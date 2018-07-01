@@ -18,7 +18,7 @@ var strat = {
 	/* INIT */
 	init: function()
 	{
-		this.name = 'RSI Bull and Bear';
+		this.name = 'RSI Bull';
 		this.requiredHistory = config.tradingAdvisor.historySize;
 		this.resetTrend();		
 		
@@ -88,9 +88,11 @@ var strat = {
 		// BEAR TREND
 		if( maFast < maSlow )
 		{
-			rsi = ind.BEAR_RSI.result;
-			if( rsi > this.settings.BEAR_RSI_high ) this.short();
-			else if( rsi < this.settings.BEAR_RSI_low ) this.long();
+
+			// rsi = ind.BEAR_RSI.result;
+			// if( rsi > this.settings.BEAR_RSI_high ) this.short();
+			// else if( rsi < this.settings.BEAR_RSI_low ) this.long();
+			this.short();
 			
 			if(this.debug) this.lowHigh( rsi, 'bear' );
 			//log.debug('BEAR-trend');
@@ -105,7 +107,7 @@ var strat = {
 			if( rsi > this.settings.BULL_RSI_high ) this.short();
 			else if( rsi < this.settings.BULL_RSI_low )  this.long();
 			if(this.debug) this.lowHigh( rsi, 'bull' );
-			//console.log('maFast= ' + maFast + ' maSlow=' + maSlow + ' rsi=' + rsi + ' rsiBullHigh=' + this.settings.BULL_RSI_high + ' rsiBullLow=' + this.settings.BULL_RSI_low);
+			console.log('maFast= ' + maFast + ' maSlow=' + maSlow + ' rsi=' + rsi + ' rsiBullHigh=' + this.settings.BULL_RSI_high + ' rsiBullLow=' + this.settings.BULL_RSI_low);
 			//log.debug('BULL-trend');
 		}
 	

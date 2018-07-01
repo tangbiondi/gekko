@@ -1,1 +1,1 @@
-worker: node gekko --config config-paper-trader.js
+worker: node gekko --config config-trader-pdt.js

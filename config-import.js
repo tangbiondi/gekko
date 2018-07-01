@@ -18,7 +18,7 @@ config.watch = {
   // see https://gekko.wizb.it/docs/introduction/supported_exchanges.html
   exchange: 'binance',
   currency: 'BTC',
-  asset: 'BNB',
+  asset: 'ETC',
 
   // You can set your own tickrate (refresh rate).
   // If you don't set it, the defaults are 2 sec for
@@ -387,7 +387,7 @@ config.adviceWriter = {
 //                       CONFIGURING ADAPTER
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-config.adapter = 'postgresql';
+config.adapter = 'sqlite';
 
 config.sqlite = {
   path: 'plugins/sqlite',
@@ -447,8 +447,8 @@ config.backtest = {
 config.importer = {
   daterange: {
     // NOTE: these dates are in UTC
-    from: "2018-06-23 00:00:00",
-    to: "2018-06-24 07:45:00"
+    from: "2018-06-28 00:00:00",
+    to: "2018-07-01 02:50:00"
   }
 }
 
