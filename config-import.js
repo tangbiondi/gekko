@@ -448,7 +448,7 @@ config.importer = {
   daterange: {
     // NOTE: these dates are in UTC
     from: "2018-06-28 00:00:00",
-    to: "2018-07-01 02:50:00"
+    to: "2018-07-01 06:40:00"
   }
 }
 
