@@ -447,8 +447,8 @@ config.backtest = {
 config.importer = {
   daterange: {
     // NOTE: these dates are in UTC
-    from: "2018-06-28 00:00:00",
-    to: "2018-07-01 07:22:00"
+    from: "2018-06-29 00:00:00",
+    to: "2018-07-02 23:35:00"
   }
 }
 
